@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "checks": [
+    "demo login and dashboard",
+    "income add edit persistence delete",
+    "CSV preview and import",
+    "scenario controls",
+    "goal creation",
+    "debt comparison",
+    "grounded guide response",
+    "trained ML inference",
+    "settings save",
+    "report rendering",
+    "390px mobile layout and navigation",
+    "logout",
+    "registration and empty-plan dashboard"
+  ],
+  "viewport_desktop": "1440 x 1050",
+  "viewport_mobile": "390 x 844",
+  "page_errors": []
+}

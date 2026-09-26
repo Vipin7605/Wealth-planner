@@ -1,0 +1,5 @@
+name,amount,category,essential
+Rent and maintenance,18000,Housing,true
+Groceries,6500,Food,true
+Broadband,1000,Utilities,true
+Cinema,1000,Entertainment,false

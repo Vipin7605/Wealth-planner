@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: wealth
+      POSTGRES_USER: wealth
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env before running Compose}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wealth"]
+      interval: 5s
+      retries: 10
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://wealth:${POSTGRES_PASSWORD}@db:5432/wealth
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  postgres_data:

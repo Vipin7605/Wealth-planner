@@ -1,0 +1,117 @@
+file,column,data_type,nullable,description
+users.csv,user_id,string,False,Fictional user join key; never a predictive feature.
+users.csv,age_at_start,integer,False,"Age at 2023-01-01, years."
+users.csv,dependants,integer,False,Dependants.
+users.csv,employment_type,string,False,Employment type.
+users.csv,risk_tolerance,string,False,Random fictional preference: low / medium / high; not a validated risk assessment.
+users.csv,retirement_age,integer,False,Retirement age.
+users.csv,split,string,False,User-disjoint partition: 700 train / 200 validation / 100 test. Exclude from features.
+users.csv,is_synthetic,boolean,False,Always true; the entire package is synthetic.
+assumptions.csv,user_id,string,False,Fictional user join key; never a predictive feature.
+assumptions.csv,annual_income_growth_rate,number,False,"Annual income growth assumption, decimal."
+assumptions.csv,annual_expense_growth_rate,number,False,"Annual living-cost growth assumption, decimal."
+assumptions.csv,annual_return_mean,number,False,Illustrative annual arithmetic mean; monthly simulation mean is this / 12.
+assumptions.csv,monthly_return_std,number,False,"Standard deviation of simulated monthly returns, decimal."
+assumptions.csv,surplus_investment_fraction,number,False,Share of positive monthly cash flow transferred into investments.
+assets.csv,user_id,string,False,Fictional user join key; never a predictive feature.
+assets.csv,as_of_date,string,False,Snapshot date or debt origination date. Filter before summing snapshots.
+assets.csv,asset_type,string,False,Asset type.
+assets.csv,value_inr,number,False,Value inr. Nominal INR.
+expense_records.csv,record_id,string,False,Record id.
+expense_records.csv,user_id,string,False,Fictional user join key; never a predictive feature.
+expense_records.csv,month_end,string,False,ISO month-end date; flows cover that calendar month.
+expense_records.csv,description,string,False,"Templated text of a monthly category total, not a real bank narration."
+expense_records.csv,category,string,False,Expense label; exclude from text-classifier features.
+expense_records.csv,amount_inr,number,False,Amount inr. Nominal INR.
+expense_records.csv,record_grain,string,False,Monthly category total; no individual transaction timing.
+expense_records.csv,split,string,False,User-disjoint partition: 700 train / 200 validation / 100 test. Exclude from features.
+monthly_financials.csv,user_id,string,False,Fictional user join key; never a predictive feature.
+monthly_financials.csv,month_end,string,False,ISO month-end date; flows cover that calendar month.
+monthly_financials.csv,age,integer,False,Starting age plus complete calendar years elapsed; birthdays not modeled.
+monthly_financials.csv,take_home_income_inr,number,False,Take home income inr. Nominal INR.
+monthly_financials.csv,living_expenses_inr,number,False,Living expenses inr. Nominal INR.
+monthly_financials.csv,essential_expenses_inr,number,False,"Living expenses excluding Shopping, Entertainment, Other."
+monthly_financials.csv,opening_cash_inr,number,False,Opening cash inr. Nominal INR.
+monthly_financials.csv,opening_investments_inr,number,False,Opening investments inr. Nominal INR.
+monthly_financials.csv,opening_debt_inr,integer,False,Opening debt inr. Nominal INR.
+monthly_financials.csv,debt_interest_inr,number,False,Debt interest inr. Nominal INR.
+monthly_financials.csv,debt_payment_inr,number,False,Debt payment inr. Nominal INR.
+monthly_financials.csv,net_cash_flow_inr,number,False,"Take-home income minus living expenses and debt payments, before investment transfers."
+monthly_financials.csv,investment_gain_inr,number,False,Investment gain inr. Nominal INR.
+monthly_financials.csv,investment_contribution_inr,number,False,Investment contribution inr. Nominal INR.
+monthly_financials.csv,investment_withdrawal_inr,number,False,Investment withdrawal inr. Nominal INR.
+monthly_financials.csv,new_borrowing_inr,number,False,End-month borrowing after using all cash and selling investments to cover shortfall.
+monthly_financials.csv,cash_inr,number,False,Cash inr. Nominal INR.
+monthly_financials.csv,investments_inr,number,False,Investments inr. Nominal INR.
+monthly_financials.csv,total_assets_inr,number,False,Total assets inr. Nominal INR.
+monthly_financials.csv,total_liabilities_inr,integer,False,Total liabilities inr. Nominal INR.
+monthly_financials.csv,net_worth_inr,number,False,Net worth inr. Nominal INR.
+monthly_financials.csv,emergency_target_inr,number,False,Six times essential expenses.
+monthly_financials.csv,emergency_gap_inr,number,False,"max(0, emergency target minus cash)."
+monthly_financials.csv,split,string,False,User-disjoint partition: 700 train / 200 validation / 100 test. Exclude from features.
+wealth_planner_dataset.csv,user_id,string,False,Fictional user join key; never a predictive feature.
+wealth_planner_dataset.csv,month_end,string,False,ISO month-end date; flows cover that calendar month.
+wealth_planner_dataset.csv,age,integer,False,Starting age plus complete calendar years elapsed; birthdays not modeled.
+wealth_planner_dataset.csv,take_home_income_inr,number,False,Take home income inr. Nominal INR.
+wealth_planner_dataset.csv,living_expenses_inr,number,False,Living expenses inr. Nominal INR.
+wealth_planner_dataset.csv,essential_expenses_inr,number,False,"Living expenses excluding Shopping, Entertainment, Other."
+wealth_planner_dataset.csv,opening_cash_inr,number,False,Opening cash inr. Nominal INR.
+wealth_planner_dataset.csv,opening_investments_inr,number,False,Opening investments inr. Nominal INR.
+wealth_planner_dataset.csv,opening_debt_inr,integer,False,Opening debt inr. Nominal INR.
+wealth_planner_dataset.csv,debt_interest_inr,number,False,Debt interest inr. Nominal INR.
+wealth_planner_dataset.csv,debt_payment_inr,number,False,Debt payment inr. Nominal INR.
+wealth_planner_dataset.csv,net_cash_flow_inr,number,False,"Take-home income minus living expenses and debt payments, before investment transfers."
+wealth_planner_dataset.csv,investment_gain_inr,number,False,Investment gain inr. Nominal INR.
+wealth_planner_dataset.csv,investment_contribution_inr,number,False,Investment contribution inr. Nominal INR.
+wealth_planner_dataset.csv,investment_withdrawal_inr,number,False,Investment withdrawal inr. Nominal INR.
+wealth_planner_dataset.csv,new_borrowing_inr,number,False,End-month borrowing after using all cash and selling investments to cover shortfall.
+wealth_planner_dataset.csv,cash_inr,number,False,Cash inr. Nominal INR.
+wealth_planner_dataset.csv,investments_inr,number,False,Investments inr. Nominal INR.
+wealth_planner_dataset.csv,total_assets_inr,number,False,Total assets inr. Nominal INR.
+wealth_planner_dataset.csv,total_liabilities_inr,integer,False,Total liabilities inr. Nominal INR.
+wealth_planner_dataset.csv,net_worth_inr,number,False,Net worth inr. Nominal INR.
+wealth_planner_dataset.csv,emergency_target_inr,number,False,Six times essential expenses.
+wealth_planner_dataset.csv,emergency_gap_inr,integer,False,"max(0, emergency target minus cash)."
+wealth_planner_dataset.csv,split,string,False,User-disjoint partition: 700 train / 200 validation / 100 test. Exclude from features.
+wealth_planner_dataset.csv,risk_tolerance,string,False,Random fictional preference: low / medium / high; not a validated risk assessment.
+wealth_planner_dataset.csv,employment_type,string,False,Employment type.
+wealth_planner_dataset.csv,dependants,integer,False,Dependants.
+goals.csv,goal_id,string,False,Goal id.
+goals.csv,user_id,string,False,Fictional user join key; never a predictive feature.
+goals.csv,as_of_date,string,False,Snapshot date or debt origination date. Filter before summing snapshots.
+goals.csv,goal_type,string,False,Goal type.
+goals.csv,target_amount_inr,number,False,Target amount inr. Nominal INR.
+goals.csv,target_date,string,False,Future label date in ML table or goal deadline in goals table.
+goals.csv,earmarked_amount_inr,number,False,"Subset of existing assets, not additional wealth; may exceed target."
+goals.csv,priority,integer,False,Priority.
+ml_training_12m.csv,user_id,string,False,Fictional user join key; never a predictive feature.
+ml_training_12m.csv,month_end,string,False,ISO month-end date; flows cover that calendar month.
+ml_training_12m.csv,age,integer,False,Starting age plus complete calendar years elapsed; birthdays not modeled.
+ml_training_12m.csv,take_home_income_inr,number,False,Take home income inr. Nominal INR.
+ml_training_12m.csv,living_expenses_inr,number,False,Living expenses inr. Nominal INR.
+ml_training_12m.csv,essential_expenses_inr,number,False,"Living expenses excluding Shopping, Entertainment, Other."
+ml_training_12m.csv,debt_payment_inr,number,False,Debt payment inr. Nominal INR.
+ml_training_12m.csv,cash_inr,number,False,Cash inr. Nominal INR.
+ml_training_12m.csv,investments_inr,number,False,Investments inr. Nominal INR.
+ml_training_12m.csv,total_liabilities_inr,integer,False,Total liabilities inr. Nominal INR.
+ml_training_12m.csv,net_worth_inr,number,False,Net worth inr. Nominal INR.
+ml_training_12m.csv,split,string,False,User-disjoint partition: 700 train / 200 validation / 100 test. Exclude from features.
+ml_training_12m.csv,risk_tolerance,string,False,Random fictional preference: low / medium / high; not a validated risk assessment.
+ml_training_12m.csv,employment_type,string,False,Employment type.
+ml_training_12m.csv,target_date,string,False,Future label date in ML table or goal deadline in goals table.
+ml_training_12m.csv,simulated_net_worth_12m_inr,number,False,Synthetic net worth exactly 12 months later; prediction target only.
+ml_training_12m.csv,simulated_change_12m_inr,number,False,"Future minus current net worth; alternative target, never a feature for the other target."
+debts.csv,user_id,string,False,Fictional user join key; never a predictive feature.
+debts.csv,as_of_date,string,False,Snapshot date or debt origination date. Filter before summing snapshots.
+debts.csv,debt_id,string,False,Loan key; debts contains origination and final snapshots. Join using key and date.
+debts.csv,debt_type,string,False,Debt type.
+debts.csv,balance_inr,number,False,Balance inr. Nominal INR.
+debts.csv,annual_interest_rate,number,False,"Nominal annual loan rate, decimal. Monthly interest = opening balance * rate / 12."
+debts.csv,scheduled_payment_inr,number,False,Fixed monthly scheduled loan payment; actual payment capped at balance plus interest.
+debt_schedule.csv,user_id,string,False,Fictional user join key; never a predictive feature.
+debt_schedule.csv,debt_id,string,False,Loan key; debts contains origination and final snapshots. Join using key and date.
+debt_schedule.csv,month_end,string,False,ISO month-end date; flows cover that calendar month.
+debt_schedule.csv,opening_balance_inr,number,False,Opening balance inr. Nominal INR.
+debt_schedule.csv,interest_inr,number,False,Interest inr. Nominal INR.
+debt_schedule.csv,payment_inr,number,False,Payment inr. Nominal INR.
+debt_schedule.csv,closing_balance_inr,number,False,Closing balance inr. Nominal INR.

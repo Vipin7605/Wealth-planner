@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "checks": [
+    "reference Overview restored and FIRE separated",
+    "score links to detailed health and SWOT",
+    "FIRE replaces allocation navigation",
+    "live FIRE preview",
+    "preview does not save",
+    "affordable contribution cap",
+    "save and reload",
+    "FIRE CSV export",
+    "invalid withdrawal rate blocked",
+    "FIRE trajectory and accessible data table",
+    "metric explanations",
+    "unsaved navigation protection",
+    "backup preview and restore",
+    "invalid backup rejected",
+    "mobile FIRE layout"
+  ],
+  "errors": []
+}

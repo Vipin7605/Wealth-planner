@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checks": [
+    "restored Overview rendered",
+    "personal protection saved and exported",
+    "persisted dashboard reload",
+    "needs template expense entry",
+    "report includes FIRE SWOT actions",
+    "mobile health layout"
+  ],
+  "errors": []
+}

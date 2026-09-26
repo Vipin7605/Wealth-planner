@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": [
+    "Monte Carlo panel renders with a live draft",
+    "raising volatility changes the simulated outcome",
+    "Monte Carlo runs on the unsaved draft only",
+    "plan-until-age validation surfaces the backend error",
+    "stale error clears once input is corrected",
+    "accessible percentile table",
+    "duplicate row flagged in preview",
+    "duplicate skipped by default, new row still imported",
+    "prediction interval rendered",
+    "feature importance rendered",
+    "mobile Monte Carlo layout"
+  ],
+  "errors": []
+}

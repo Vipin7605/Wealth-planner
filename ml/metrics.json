@@ -1,0 +1,128 @@
+{
+  "schema_version": 2,
+  "dataset": "Purpose-built synthetic panel v1",
+  "seed": 42,
+  "selected_model": "Gradient boosting",
+  "features": [
+    "age",
+    "take_home_income_inr",
+    "living_expenses_inr",
+    "essential_expenses_inr",
+    "debt_payment_inr",
+    "cash_inr",
+    "investments_inr",
+    "total_liabilities_inr",
+    "net_worth_inr",
+    "monthly_surplus_inr",
+    "savings_rate",
+    "liquidity_months",
+    "investment_share",
+    "risk_level",
+    "investments_x_risk",
+    "risk_tolerance",
+    "employment_type"
+  ],
+  "target": "simulated_net_worth_12m_inr",
+  "target_construction": "Predicts 12-month change in net worth, added to current net worth.",
+  "rows": {
+    "train": 16800,
+    "validation": 4800,
+    "test": 2400
+  },
+  "users": {
+    "train": 700,
+    "validation": 200,
+    "test": 100
+  },
+  "validation": {
+    "Ridge regression": {
+      "mae": 125892.57,
+      "rmse": 183051.66
+    },
+    "Random forest": {
+      "mae": 127478.94,
+      "rmse": 184073.74
+    },
+    "Gradient boosting": {
+      "mae": 123339.01,
+      "rmse": 182650.43
+    },
+    "Persistence baseline": {
+      "mae": 317659.9,
+      "rmse": 417095.27
+    },
+    "Cash-flow extrapolation": {
+      "mae": 221206.89,
+      "rmse": 317539.47
+    }
+  },
+  "test": {
+    "mae": 130546.95,
+    "rmse": 195086.1
+  },
+  "test_persistence": {
+    "mae": 340432.48,
+    "rmse": 455862.07
+  },
+  "test_baselines": {
+    "Persistence baseline": {
+      "mae": 340432.48,
+      "rmse": 455862.07
+    },
+    "Cash-flow extrapolation": {
+      "mae": 246456.18,
+      "rmse": 363915.25
+    }
+  },
+  "interval": {
+    "level": 0.8,
+    "method": "Conformalized quantile regression (gradient boosting)",
+    "conformal_margin_inr": 34272.89,
+    "validation_coverage": 0.8004,
+    "test_coverage": 0.8337,
+    "test_mean_width_inr": 434786.45
+  },
+  "importance": [
+    {
+      "feature": "cash_inr",
+      "mae_increase_inr": 22404.33
+    },
+    {
+      "feature": "take_home_income_inr",
+      "mae_increase_inr": 21280.63
+    },
+    {
+      "feature": "monthly_surplus_inr",
+      "mae_increase_inr": 15459.42
+    },
+    {
+      "feature": "debt_payment_inr",
+      "mae_increase_inr": 13744.83
+    },
+    {
+      "feature": "net_worth_inr",
+      "mae_increase_inr": 10400.07
+    },
+    {
+      "feature": "investments_x_risk",
+      "mae_increase_inr": 8601.01
+    },
+    {
+      "feature": "investments_inr",
+      "mae_increase_inr": 3832.35
+    },
+    {
+      "feature": "liquidity_months",
+      "mae_increase_inr": 3286.57
+    }
+  ],
+  "limitations": [
+    "Synthetic outcomes only; no real-world validation.",
+    "User-disjoint evaluation, not a future-calendar holdout.",
+    "Rows from one user are correlated, so interval coverage is approximate.",
+    "MAE is an average error; use the interval, not MAE, to judge uncertainty."
+  ],
+  "python_version": "3.12.3",
+  "sklearn_version": "1.8.0",
+  "data_sha256": "d83321b65bc4d0c0ada1124f060905cb0cf5dafbcbb68680b98b8de38802cfa6"
+}

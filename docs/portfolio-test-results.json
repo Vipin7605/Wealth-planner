@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": [
+    "classified demo and reserve exclusions",
+    "tagged diversification views",
+    "budget cap after reservations",
+    "invalid totals blocked",
+    "save and reload",
+    "saved CSV export",
+    "holding metadata edit updates scope",
+    "short-horizon policy",
+    "report integration",
+    "portfolio guide integration",
+    "mobile portfolio layout"
+  ],
+  "errors": []
+}
